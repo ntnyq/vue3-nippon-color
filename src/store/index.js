@@ -1,15 +1,12 @@
-import Vue from 'vue'
 import Vuex from 'vuex'
+import colors from '@/assets/colors'
 
-Vue.use(Vuex)
+const state = {
+  colors,
+}
+const actions = {}
+const mutations = {}
 
-export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+const store = Vuex.createStore({ state, actions, mutations })
+
+export default store
