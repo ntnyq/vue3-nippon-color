@@ -19,7 +19,11 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import {
+  ref,
+  watch,
+  onMounted,
+} from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import {
@@ -39,13 +43,23 @@ export default {
 
     const colorList = ref(store.state.colors)
     const activeColor = ref({})
+    const lastElem = ref(null)
 
     const changeColor = color => {
       router.push({ path: '/', query: { c: color.rgb } })
     }
 
+    watch(activeColor, newVal => {
+
+    })
+
+    onMounted(() => {
+      console.log('Hello world')
+    })
+
     return {
       colorList,
+      lastElem,
       activeColor,
       changeColor,
     }

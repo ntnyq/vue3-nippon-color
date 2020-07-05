@@ -7,6 +7,10 @@ const state = {
 const actions = {}
 const mutations = {}
 
-const store = Vuex.createStore({ state, actions, mutations })
+const store = Vuex.createStore({
+  state,
+  actions,
+  mutations,
+})
 
 export default store
