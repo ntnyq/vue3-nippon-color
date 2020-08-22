@@ -1,6 +1,8 @@
 // f for fontColor / d for dark / b for bright
 // c for color series
 // r red ;b black ;w white ;p purple ;c cyan ;g green ;y yellow ;
+import type { Color } from '@/types'
+
 export default [
   {
     name: '撫子',
@@ -2252,4 +2254,4 @@ export default [
     f: 'b',
     Drgb: [12, 12, 12],
   },
-]
+] as Color[]

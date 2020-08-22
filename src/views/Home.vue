@@ -1,24 +1,22 @@
 <template>
   <div class="home">
-    <div class="display">
-
-    </div>
+    <div class="display" />
     <div class="tab-wrapper">
       <div class="tab">
         <color-tab
-          @click="changeColor(color)"
           v-for="color in colorList"
           :key="color.name"
           :kanji="color.name"
           :rgb="color.rgb"
           class="tab-item js-tab-item"
+          @click="changeColor(color)"
         />
       </div>
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import {
   ref,
   watch,
@@ -26,9 +24,8 @@ import {
 } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
-import {
-  ColorTab,
-} from '@/components'
+import type { Color } from '@/types'
+import { ColorTab } from '@/components'
 
 export default {
   name: 'Home',
@@ -37,20 +34,21 @@ export default {
     ColorTab,
   },
 
-  setup () {
+  setup (): unknown {
     const router = useRouter()
     const store = useStore()
 
-    const colorList = ref(store.state.colors)
-    const activeColor = ref({})
+    const colorList: Color[] = ref(store.state.colors)
+    const activeColor = ref({} as Color)
     const lastElem = ref(null)
 
-    const changeColor = color => {
+    const changeColor = (color: Color) => {
       router.push({ path: '/', query: { c: color.rgb } })
+      activeColor.value = color
     }
 
-    watch(activeColor, newVal => {
-
+    watch(activeColor, (newVal: Color) => {
+      console.log(`ActiveColor changed to ${newVal.name}`)
     })
 
     onMounted(() => {
@@ -108,6 +106,7 @@ export default {
   &:before
     content ''
     position absolute
+    z-index -1
     display block
     width 100%
     height 100%

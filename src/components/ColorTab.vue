@@ -5,13 +5,17 @@
       class="color-block"
     />
     <div class="monji-block">
-      <div class="kanji">{{ kanji }}</div>
-      <div class="rgb">{{ `#${rgb}` }}</div>
+      <div class="kanji">
+        {{ kanji }}
+      </div>
+      <div class="rgb">
+        {{ `#${rgb}` }}
+      </div>
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'ColorTab',
 
@@ -38,6 +42,7 @@ export default {
   align-items center
   height 2.5rem
   color #3a3226
+  cursor pointer
 
 .color-block
   width 0.5rem
