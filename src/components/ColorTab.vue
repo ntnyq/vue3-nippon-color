@@ -16,7 +16,9 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   name: 'ColorTab',
 
   props: {
@@ -30,11 +32,11 @@ export default {
       required: true,
     },
   },
-}
+})
 </script>
 
 <style lang="stylus" scoped>
-@import '~@/styles/core/index'
+@import "~@/styles/core/index"
 
 .card
   display flex
@@ -57,9 +59,7 @@ export default {
   justify-content center
   align-items flex-start
   width 100%
-  text-overflow ellipsis
-  white-space nowrap
-  overflow hidden
+  ellipsis()
 
 .kanji
   width 100%

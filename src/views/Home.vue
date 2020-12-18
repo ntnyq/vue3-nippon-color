@@ -21,13 +21,14 @@ import {
   ref,
   watch,
   onMounted,
+  defineComponent,
 } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import type { Color } from '@/types'
 import { ColorTab } from '@/components'
 
-export default {
+export default defineComponent({
   name: 'Home',
 
   components: {
@@ -62,7 +63,7 @@ export default {
       changeColor,
     }
   },
-}
+})
 </script>
 
 <style lang="stylus" scoped>
