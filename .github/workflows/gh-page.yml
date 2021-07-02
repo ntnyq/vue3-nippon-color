@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v2
       - run: yarn install --frozen-lockfile --non-interactive
-      - run: yarn build:gh
+      - run: yarn build
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3

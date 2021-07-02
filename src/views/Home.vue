@@ -67,7 +67,7 @@ export default defineComponent({
 </script>
 
 <style lang="stylus" scoped>
-@import '~@/styles/core/index'
+@import "../styles/core/index"
 
 .home
   display flex
@@ -105,13 +105,13 @@ export default defineComponent({
   min-height 100%
 
   &:before
-    content ''
+    content ""
     position absolute
     z-index -1
     display block
     width 100%
     height 100%
-    background-image url('~@/assets/images/bg1.png')
+    background-image url("../assets/images/bg1.png")
     background-attachment local
     background-repeat repeat
     opacity 0.3

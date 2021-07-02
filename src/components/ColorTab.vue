@@ -36,7 +36,7 @@ export default defineComponent({
 </script>
 
 <style lang="stylus" scoped>
-@import "~@/styles/core/index"
+@import "../styles/core/index"
 
 .card
   display flex
