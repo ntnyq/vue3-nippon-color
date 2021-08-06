@@ -6,9 +6,10 @@ module.exports = {
   },
 
   extends: [
-    'plugin:vue/vue3-recommended',
-    '@ntnyq',
-    '@vue/typescript/recommended',
+    `plugin:vue/vue3-recommended`,
+    `@ntnyq`,
+    `@vue/typescript/recommended`,
+    `vue-global-api`,
   ],
 
   parserOptions: {

@@ -16,53 +16,30 @@
   </div>
 </template>
 
-<script lang="ts">
-import {
-  ref,
-  watch,
-  onMounted,
-  defineComponent,
-} from 'vue'
+<script lang="ts" setup>
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import type { Color } from '@/types'
 import { ColorTab } from '@/components'
 
-export default defineComponent({
-  name: 'Home',
+const router = useRouter()
+const store = useStore()
 
-  components: {
-    ColorTab,
-  },
+const colorList: Color[] = ref(store.state.colors)
+const activeColor = ref({} as Color)
+// const lastElem = ref(null)
 
-  setup (): unknown {
-    const router = useRouter()
-    const store = useStore()
+const changeColor = (color: Color) => {
+  router.push({ path: '/', query: { c: color.rgb } })
+  activeColor.value = color
+}
 
-    const colorList: Color[] = ref(store.state.colors)
-    const activeColor = ref({} as Color)
-    const lastElem = ref(null)
+watch(activeColor, (color: Color) => {
+  console.log(`ActiveColor changed to ${color.name}`)
+})
 
-    const changeColor = (color: Color) => {
-      router.push({ path: '/', query: { c: color.rgb } })
-      activeColor.value = color
-    }
-
-    watch(activeColor, (newVal: Color) => {
-      console.log(`ActiveColor changed to ${newVal.name}`)
-    })
-
-    onMounted(() => {
-      console.log('Hello world')
-    })
-
-    return {
-      colorList,
-      lastElem,
-      activeColor,
-      changeColor,
-    }
-  },
+onMounted(() => {
+  console.log('Hello world')
 })
 </script>
 

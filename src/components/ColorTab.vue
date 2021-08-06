@@ -15,22 +15,16 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+defineProps({
+  kanji: {
+    type: String,
+    required: true,
+  },
 
-export default defineComponent({
-  name: 'ColorTab',
-
-  props: {
-    kanji: {
-      type: String,
-      required: true,
-    },
-
-    rgb: {
-      type: String,
-      required: true,
-    },
+  rgb: {
+    type: String,
+    required: true,
   },
 })
 </script>

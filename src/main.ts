@@ -1,9 +1,9 @@
+import 'vue-global-api'
+import '@/styles/style.styl'
 import { createApp } from 'vue'
-import App from './App.vue'
+import App from '@/App.vue'
 import router from '@/router'
 import store from '@/store'
-
-import '@/styles/style.styl'
 
 const app = createApp(App)
 
