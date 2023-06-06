@@ -1,5 +1,5 @@
-import type { RouteRecordRaw } from 'vue-router'
 import Home from '@/views/Home.vue'
+import type { RouteRecordRaw } from 'vue-router'
 
 const routes: Array<RouteRecordRaw> = [
   {

@@ -1,6 +1,9 @@
 // f for fontColor / d for dark / b for bright
 // c for color series
 // r red ;b black ;w white ;p purple ;c cyan ;g green ;y yellow ;
+
+/* eslint-disable max-lines */
+// cSpell: disable
 import type { Color } from '@/types'
 
 export default [

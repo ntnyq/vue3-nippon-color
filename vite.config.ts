@@ -1,5 +1,5 @@
+import path from 'node:path'
 import { defineConfig } from 'vite'
-import path from 'path'
 import Vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
@@ -9,7 +9,10 @@ export default defineConfig({
     },
   },
 
-  plugins: [
-    Vue(),
-  ],
+  server: {
+    open: true,
+    host: true,
+  },
+
+  plugins: [Vue()],
 })

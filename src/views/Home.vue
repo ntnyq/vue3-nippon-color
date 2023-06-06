@@ -1,47 +1,41 @@
-<template>
-  <div class="home">
-    <div class="display" />
-    <div class="tab-wrapper">
-      <div class="tab">
-        <color-tab
-          v-for="color in colorList"
-          :key="color.name"
-          :kanji="color.name"
-          :rgb="color.rgb"
-          class="tab-item js-tab-item"
-          @click="changeColor(color)"
-        />
-      </div>
-    </div>
-  </div>
-</template>
-
 <script lang="ts" setup>
+import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { useStore } from 'vuex'
-import type { Color } from '@/types'
 import { ColorTab } from '@/components'
+import { useAppStore } from '@/stores/app'
+import type { Color } from '@/types'
 
 const router = useRouter()
-const store = useStore()
-
-const colorList: Color[] = ref(store.state.colors)
-const activeColor = ref({} as Color)
-// const lastElem = ref(null)
+const { colorList } = useAppStore()
+const activeColor = ref<Partial<Color>>({})
 
 const changeColor = (color: Color) => {
   router.push({ path: '/', query: { c: color.rgb } })
   activeColor.value = color
 }
 
-watch(activeColor, (color: Color) => {
+watch(activeColor, color => {
   console.log(`ActiveColor changed to ${color.name}`)
 })
-
-onMounted(() => {
-  console.log('Hello world')
-})
 </script>
+
+<template>
+  <div class="home">
+    <div class="display" />
+    <div class="tab-wrapper">
+      <div class="tab">
+        <ColorTab
+          @click="changeColor(color)"
+          v-for="color in colorList"
+          :key="color.name"
+          :kanji="color.name"
+          :rgb="color.rgb"
+          class="tab-item js-tab-item"
+        />
+      </div>
+    </div>
+  </div>
+</template>
 
 <style lang="stylus" scoped>
 @import "../styles/core/index"

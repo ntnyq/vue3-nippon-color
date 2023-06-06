@@ -1,42 +1,18 @@
 {
-  "files.associations": {
-    "*.env.*": "dotenv"
-  },
-  "emmet.syntaxProfiles": {
-    "vue-html": "html"
-  },
-  "emmet.includeLanguages": {
-    "vue-html": "html"
-  },
+  "prettier.enable": true,
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
   "eslint.validate": [
+    "vue",
+    "yaml",
+    "html",
+    "json",
+    "jsonc",
+    "json5",
+    "markdown",
     "javascript",
     "typescript",
-    "vue",
-    "vue-html"
+    "javascriptreact",
+    "typescriptreact"
   ],
-  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-  "vetur.completion.autoImport": true,
-  "vetur.completion.tagCasing": "kebab",
-  "vetur.format.defaultFormatter.html": "js-beautify-html",
-  "vetur.format.defaultFormatter.js": "vscode-typescript",
-  "vetur.format.defaultFormatter.ts": "none",
-  "vetur.format.defaultFormatter.scss": "prettier",
-  "vetur.experimental.templateInterpolationService": false,
-  "vetur.format.defaultFormatterOptions": {
-    "js-beautify-html": {
-      "wrap_attributes": "force-expand-multiline"
-    }
-  },
-  "[typescript]": {
-    "editor.formatOnSave": false
-  },
-  "cSpell.words": [
-    "Drgb",
-    "animejs",
-    "cmyk"
-  ]
+  "cSpell.words": ["animejs", "cmyk", "Drgb", "pinia", "styl"]
 }

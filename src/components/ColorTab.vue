@@ -1,3 +1,17 @@
+<script lang="ts" setup>
+defineProps({
+  kanji: {
+    type: String,
+    required: true,
+  },
+
+  rgb: {
+    type: String,
+    required: true,
+  },
+})
+</script>
+
 <template>
   <div class="card">
     <div
@@ -14,20 +28,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-defineProps({
-  kanji: {
-    type: String,
-    required: true,
-  },
-
-  rgb: {
-    type: String,
-    required: true,
-  },
-})
-</script>
 
 <style lang="stylus" scoped>
 @import "../styles/core/index"

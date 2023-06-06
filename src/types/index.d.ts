@@ -1,4 +1,3 @@
-
 export interface Color {
   name: string
   cmyk: string
